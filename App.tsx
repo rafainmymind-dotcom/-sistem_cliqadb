@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { LogOut, User as UserIcon, Menu, Bell, Search, PanelLeftClose, PanelLeftOpen, RefreshCcw, Cloud, CloudCheck, AlertCircle } from 'lucide-react';
+import { LogOut, User as UserIcon, Menu, Bell, Search, RefreshCcw, Cloud, CheckCircle, AlertCircle } from 'lucide-react';
 import { Client, Activity, ChecklistRecord, ChecklistDefinition, Project, User, SystemConfig } from './types';
 import { MENU_ITEMS, ADMIN_MENU_ITEMS } from './constants';
 import Dashboard from './components/Dashboard';
@@ -232,7 +232,7 @@ const App: React.FC = () => {
             <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-8 shrink-0 z-40">
               <div className="flex items-center gap-4">
                  <div className={`flex items-center gap-2 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest ${cloudStatus === 'online' ? 'bg-emerald-50 text-emerald-600' : 'bg-amber-50 text-amber-600'}`}>
-                    {cloudStatus === 'syncing' ? <RefreshCcw size={10} className="animate-spin" /> : <CloudCheck size={10} />}
+                    {cloudStatus === 'syncing' ? <RefreshCcw size={10} className="animate-spin" /> : <CheckCircle size={10} />}
                     {cloudStatus === 'online' ? 'MySQL Ativo' : 'Sincronizando...'}
                  </div>
               </div>
